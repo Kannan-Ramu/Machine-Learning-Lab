@@ -1,0 +1,15 @@
+def finddis(s):
+    x=y=0
+    for i in s:
+        if(i=='U'):
+            x+=1
+        elif(i=='D'):
+            x-=1
+        elif(i=='L'):
+            y-=1
+        elif(i=='R'):
+            y+=1
+    return x,y
+s='UDLRUDLRDL'
+x1,y1=finddis(s)
+print("Final Position: ( {} ,  {} )".format(x1,y1))
