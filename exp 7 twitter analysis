@@ -1,0 +1,21 @@
+import sklearn
+import matplotlib.pyplot as plt
+%matplotlib inline
+import pandas as pd
+from sklearn.model_selection import train_test_split
+import numpy as np
+import seaborn as sns
+import re
+import nltk
+from nltk.corpus import stopwords
+from wordcloud import WordCloud,STOPWORDS
+df1 = pd.read_csv('Tweets.csv')
+df1.dataframeName = 'Tweets.csv'
+nRow, nCol = df1.shape
+print(f'There are {nRow} rows and {nCol} columns')
+df1.head()
+colors=sns.color_palette("husl", 10) 
+pd.Series(df1["airline"]).value_counts().plot(kind = "bar",
+                        color=colors,figsize=(8,6),fontsize=10,rot = 0, title = "Total Tweets for each Airlines")
+plt.xlabel('Airlines', fontsize=10)
+plt.ylabel('No. of Tweets', fontsize=10)
